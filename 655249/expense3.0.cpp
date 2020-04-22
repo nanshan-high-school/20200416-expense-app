@@ -27,7 +27,7 @@ int main() {
     }
 
     int item[2][piece];
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < piece; i++) {
         cout << i + 1 << ":";
         cin >> item[0][i];
         cin.ignore();
