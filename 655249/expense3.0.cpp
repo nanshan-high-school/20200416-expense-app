@@ -31,8 +31,7 @@ int main() {
         cout << i + 1 << ":";
         cin >> item[0][i];
         cin.ignore();
-        cin >> name[i];
-        cin.ignore();
+        getline(cin, name[i]);
         cin >> item[1][i];
         cin.ignore();
     }
