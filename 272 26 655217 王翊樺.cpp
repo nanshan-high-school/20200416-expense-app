@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num,a,b;
+    int choice;
+    int p[100] = {0};
+    string name[100];
+    cout << "請問有幾個分類?";
+    cin >> num;
+    for (int x = 0; x < num; x++) {
+         cout << "請輸入第" << x + 1 << "類名稱:";
+         cin >> name[x];
+    }
+    cout << "請問有幾個帳單?";
+    cin >> choice;
+    for (int i = 0;i < choice; i++) {
+        cout << "請輸入你要第幾個分類:";
+        cin >> a;
+        cout << "請輸入你的帳單:";
+        cin >> b;
+        p[a] += b;
+    }
+    for (int y = 0; y < num; y++) {
+         cout << name[y] << "有" << p[y+1] << "\n";
+    }
+}
