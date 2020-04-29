@@ -2,27 +2,37 @@
 using namespace std;
 
 int main() {
-  cout<<"請問有幾個分類";
-  int type;
-  cin>>type;
+    cout << "你有幾個分類:";
+    int type;
+    cin >> type;
 
-  cout<<"請問有幾筆帳";
-  int accout;
-  cin >> accout;
+    int x[type];
 
-  int item[type][accout];
+    cout << "有多少筆帳:";
+    int account;
+    cin >> account;
 
-  for(int i = 0;i < accout;i++){
-      cout << "請輸入種類";
-      int choise = 0;
-      cin >> choise;
+    string name[1000];
 
-      cout<<"請輸入帳目";
-      int coin;
-      cin >> coin;
+    for (int i = 0; i < type; i++) {
+        cout << "請輸入第" << i + 1 << "類名稱:";
+        cin >> name[i];
+    }
 
-      for (int j = 0; j < coin; j++){
-          accout += coin;
-      }
-  }//未完成
+    int money;
+    int category;
+
+    for (int j = 0;j < account;j++) {
+        cout << "第" << j + 1 << "筆是第幾類:";
+        cin >> category;
+
+        cout << "第" << j + 1 << "筆是多少:";
+        cin >> money;
+        x[j] = 0;
+        x[j] += money;   
+    }
+    
+    for (int i = 0;i < type;i++) {
+        cout << name[i] << "類總共:" << x[i] << "元" << "\n";
+    }
 }
