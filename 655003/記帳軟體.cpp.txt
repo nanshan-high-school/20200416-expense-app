@@ -1,0 +1,59 @@
+﻿#include <iostream>
+using namespace std;
+
+int main() {
+	int sort;
+	int moneydata;
+	int number;
+	int money;
+
+	cout << "請問有幾個分類:";
+	cin >> sort;
+
+	int sortmoney[sort];
+	for (int i = 0; i < sort; i++) {
+		sortmoney[i] = 0;
+	}
+
+	string sortname[sort];
+	string product[sort][moneydata];
+	
+	for (int i = 0; i < sort; i++) {
+		cout << "第" << i + 1 << "個分類是:";
+		
+		cin >> sortname[i];
+	}
+
+	cout << "有幾筆帳:";
+	cin >> moneydata;
+
+	for (int i = 0; i < moneydata; i++) {
+		cout << "第幾類:";
+		cin >> number;
+
+		cout << "商品名稱:";
+		cin >> product[number - 1][i];
+
+		cout << "金額:";
+		cin >> money;
+		sortmoney[number - 1] += money;
+
+		cout << "\n";
+	}
+
+	cout << "\n";
+
+	for (int i = 0; i < sort; i++) {
+		cout << sortname[i] << "有";
+		
+		for (int j = 0; j < moneydata; j++) {
+			cout << product[i][j];
+			
+			if (j < moneydata - 1) {
+				cout << " ";
+			}
+		}
+
+		cout << ":" << sortmoney[i] << "\n";
+	}
+}
